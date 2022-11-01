@@ -1,7 +1,8 @@
+"use strict";
 // первый пример 
-var button = document.querySelector('#btn');
-var input1 = document.querySelector('#num-1');
-var input2 = document.querySelector('#num-2');
+const button = document.querySelector('#btn');
+const input1 = document.querySelector('#num-1');
+const input2 = document.querySelector('#num-2');
 function add(a, b) {
     return a + b;
 }
@@ -10,30 +11,30 @@ button === null || button === void 0 ? void 0 : button.addEventListener("click",
     console.log(add(+input1.value, +input2.value));
 });
 // простые типы данных 
-var num;
+let num;
 num = 5;
-var str1;
+let str1;
 str1 = "string";
 // const person: string = "Maxim"; // можно не опредилять тип данных
 // сложные типы данных
 // массив строк 
-var arrString;
+let arrString;
 arrString = ["effgg", "max", "ilon"];
 console.log(arrString);
 // массив чисел
-var arrNumber;
+let arrNumber;
 // для всех типов даных
-var arrAny;
+let arrAny;
 // для массивов обьектов
-var arrObject;
+let arrObject;
 arrObject = [{ name: "Vill" }];
 // тип object
-var obj = {}; //const obj: {} = {};
+const obj = {}; //const obj: {} = {};
 // Для не обязательных полей есть оператор ?
-var obj1 = {};
+const obj1 = {};
 obj1.name = 'Alex';
 // Пример заполнения обьекта
-var data = {
+const data = {
     id: 1,
     price: 10.99,
     permission: ['read', 'write'],
@@ -43,13 +44,13 @@ var data = {
     }
 };
 // пример Literal Type
-var fruit = [];
+const fruit = [];
 function fruits(arr, value, action) {
     if (action === 'add') {
         arr.push(value);
     }
     else {
-        var index = arr.indexOf(value);
+        const index = arr.indexOf(value);
         arr.splice(index, 1);
     }
     return arr;
@@ -60,20 +61,20 @@ fruits(fruit, 'lemon', 'add');
 fruits(fruit, 'banana', 'delete');
 fruits(fruit, 'orange', 'add');
 console.log(fruit);
-var age;
+let age;
 age = 50;
-var callback = function (a) {
+let callback = (a) => {
     return 100 + a;
 };
 ;
 console.log(callback(1));
-var some;
+let some;
 some = 'Text';
-var str;
+let str;
 if (typeof some === 'string') {
     str = some;
 }
-var person;
+let person;
 person = ['Max', 21];
 person = ['Alex', 22];
 console.log(person);
@@ -96,7 +97,7 @@ var Loading;
     Loading[Loading["READY"] = 1] = "READY";
 })(Loading || (Loading = {}));
 ;
-var page = {
+const page = {
     load: Loading.LOADING
 };
 if (page.load === Loading.READY) {
@@ -105,13 +106,16 @@ if (page.load === Loading.READY) {
 if (page.load === Loading.LOADING) {
     console.log('Страница загружается');
 }
-function showMessage(message) {
-    console.log(message);
-}
-var union;
+let union;
 function calc(num1, num2) {
-    return num1 + num2;
+    if (typeof num1 === 'number' && typeof num2 === 'number') {
+        return num1 + num2;
+    }
+    else {
+        return num1.toString() + num2.toString();
+    }
 }
+console.log(calc("12", "4"));
 function customError() {
     throw new Error('Error');
 }

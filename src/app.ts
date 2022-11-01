@@ -67,7 +67,7 @@ const data: {
 // пример Literal Type
 const fruit:string[] = [];
 
-function fruits(arr, value:string, action:'add'|'delete') {
+function fruits(arr:any, value:string, action:'add'|'delete') {
     if (action === 'add') {
         arr.push(value);
     } else {
@@ -133,15 +133,18 @@ enum Loading { LOADING, READY };
  if (page.load === Loading.LOADING) {
      console.log('Страница загружается');
  }
-function showMessage(message) {
-  console.log(message);
-}
  
 let union: string | number;
 
- function calc(num1, num2) {
-  return num1 + num2;
+function calc(num1: number | string, num2: number | string) {
+   if (typeof num1 === 'number'&& typeof num2=== 'number') {
+    
+     return num1 + num2;
+   } else {
+     return num1.toString() + num2.toString();
+   }
 }
+console.log(calc("12", "4"));
 
 function customError() {
   throw new Error('Error');
