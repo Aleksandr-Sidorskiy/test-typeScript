@@ -136,10 +136,16 @@ smash(["hello"]);
  */
 
 var summation = function (num) {
-  // num.reduce((acum, sum) <= {
+  // let sum = 0;
+  // for (let i = 0; i <= num; i++) {
+  //   sum += i;
+  // }
 
-  // }, 0);
-  console.log(num);
+  console.log(
+    Array(num)
+      .fill(true)
+      .reduce((sum, item, index) => sum + index + 1, 0)
+  );
 };
 summation(1);
 summation(2);
