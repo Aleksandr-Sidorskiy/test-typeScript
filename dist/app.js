@@ -185,7 +185,7 @@ function getGrade(s1, s2, s3) {
   let cost;
   const averageRating =
     grades.reduce((acc, grade) => acc + grade, 0) / grades.length || 0;
-  console.log(averageRating);
+  // console.log(averageRating);
   if (averageRating >= 90 && averageRating <= 100) {
     cost = "A";
   } else if (averageRating >= 80 && averageRating <= 90) {
@@ -199,7 +199,7 @@ function getGrade(s1, s2, s3) {
   } else if (!averageRating) {
     cost = "F";
   }
-  console.log(cost);
+  // console.log(cost);
   return cost;
 }
 // getGrade(95, 90, 93);
@@ -209,3 +209,24 @@ getGrade(60, 82, 76);
 getGrade(65, 70, 59);
 getGrade(58, 59, 60);
 8;
+/**
+ * You get an array of numbers, return the sum of all of the positives ones.
+
+Example [1,-4,7,12] => 1 + 7 + 12 = 20
+
+Note: if there is nothing to sum, the sum is default to 0.
+ */
+function positiveSum(arr) {
+  const some = arr.reduce((acc, num) => {
+    if (num < 0) {
+      return;
+    }
+    return num + acc;
+  }, 0);
+  console.log(some);
+}
+positiveSum([1, 2, 3, 4, 5]);
+positiveSum([1, -2, 3, 4, 5]);
+positiveSum([]);
+positiveSum([-1, -2, -3, -4, -5]);
+positiveSum([-1, 2, 3, 4, -5]);
