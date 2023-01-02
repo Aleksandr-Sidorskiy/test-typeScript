@@ -141,12 +141,71 @@ var summation = function (num) {
   //   sum += i;
   // }
 
-  console.log(
-    Array(num)
-      .fill(true)
-      .reduce((sum, item, index) => sum + index + 1, 0)
-  );
+  Array(num)
+    .fill(true)
+    .reduce((sum, item, index) => sum + index + 1, 0);
 };
 summation(1);
 summation(2);
 summation(8);
+/**
+ * Write a function which calculates the average of the numbers in a given list.
+ */
+function findAverage(array) {
+  return array.reduce((acc, item) => acc + item, 0) / array.length || 0;
+}
+findAverage([1, 2, 3]);
+findAverage([1, 2, 3, 4]);
+findAverage([50, 92, 99, 33, 17, 68, 32]); //55.85714285714286
+findAverage([]);
+/**
+ * You get given the time in hours and you need to return the number
+ * of litres Nathan will drink,rounded to the smallest value.
+ */
+
+function litres(time) {
+  const litr = time * 0.5;
+  return Math.floor(litr, 1);
+}
+
+litres(2);
+litres(1.4);
+litres(12.3);
+litres(0.82);
+litres(11.8);
+litres(1787);
+litres(0);
+/**
+ *Complete the function so that it finds the average of 
+ the three scores passed to it and returns
+the letter value associated with that grade.
+ */
+function getGrade(s1, s2, s3) {
+  const grades = [s1, s2, s3];
+  let cost;
+  const averageRating =
+    grades.reduce((acc, grade) => acc + grade, 0) / grades.length || 0;
+  console.log(averageRating);
+  if (averageRating >= 90 && averageRating <= 100) {
+    cost = "A";
+  } else if (averageRating >= 80 && averageRating <= 90) {
+    cost = "B";
+  } else if (averageRating >= 70 && averageRating <= 80) {
+    cost = "C";
+  } else if (averageRating >= 60 && averageRating <= 70) {
+    cost = "D";
+  } else if (averageRating >= 0 && averageRating <= 60) {
+    cost = "F";
+  } else if (!averageRating) {
+    cost = "F";
+  }
+  console.log(cost);
+  return cost;
+}
+// getGrade(95, 90, 93);
+// getGrade(70, 70, 100);
+// getGrade(82, 85, 87);
+getGrade(60, 82, 76);
+getGrade(65, 70, 59);
+getGrade(58, 59, 60);
+8;
