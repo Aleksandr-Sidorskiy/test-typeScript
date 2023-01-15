@@ -217,16 +217,37 @@ Example [1,-4,7,12] => 1 + 7 + 12 = 20
 Note: if there is nothing to sum, the sum is default to 0.
  */
 function positiveSum(arr) {
-  const some = arr.reduce((acc, num) => {
-    if (num < 0) {
-      return;
-    }
-    return num + acc;
-  }, 0);
-  console.log(some);
+  const sum = arr
+    .filter((value) => value > 0)
+    .reduce((acc, number) => {
+      return acc + number;
+    }, 0);
+
+  // console.log(sum);
+  return sum;
 }
 positiveSum([1, 2, 3, 4, 5]);
 positiveSum([1, -2, 3, 4, 5]);
 positiveSum([]);
 positiveSum([-1, -2, -3, -4, -5]);
 positiveSum([-1, 2, 3, 4, -5]);
+
+/**
+ * Welcome. In this kata, you are asked to square every digit of a number and concatenate them.
+
+For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1. (81-1-1-81)
+
+Example #2: An input of 765 will/should return 493625 because 72 is 49, 62 is 36, and 52 is 25. (49-36-35)
+
+Note: The function accepts an integer and returns an integer.
+
+Happy Coding!
+ */
+function squareDigits(num) {
+  const spreadNum = [num];
+  console.log(Math.pow());
+  console.log(spreadNum);
+}
+squareDigits(3212);
+squareDigits(2112);
+squareDigits(0);
